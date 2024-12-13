@@ -1,10 +1,8 @@
 #include <sourcemod>
 #include <neotokyo>
 #include <sdkhooks>
-#include <entity_prop_stocks>
 
 #define Attack_Two (1 << 11)
-
 
 public Plugin myinfo = {
     name = "NT Drop nade",
