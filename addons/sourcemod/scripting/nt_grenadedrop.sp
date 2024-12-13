@@ -14,31 +14,6 @@ public Plugin myinfo = {
     url = ""
 };
 
-public void OnEntityCreated(int entity, const char[] classname)
-{
-	if(StrContains(classname, "weapon_", true) == -1)
-	{
-		return;
-	}
-	
-	if(StrEqual(classname, "weapon_grenade", true)
-	|| StrEqual(classname, "weapon_smokegrenade", true)
-	|| StrEqual(classname, "weapon_remotedet", true))
-	{
-		RequestFrame(SetViewOffset, entity);
-	}
-}
-
-void SetViewOffset(int entity)
-{
-	if(!IsValidEntity(entity))
-	{
-		return;
-	}
-	
-	SetEntPropVector(entity, Prop_Data, "m_vecViewOffset", {0.0, 0.0, 1.0});
-}
-
 public Action OnPlayerRunCmd(int client, int &buttons)
 {
 	if(!IsPlayerAlive(client))
