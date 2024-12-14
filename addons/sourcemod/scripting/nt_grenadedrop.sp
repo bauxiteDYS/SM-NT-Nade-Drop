@@ -25,7 +25,7 @@ public Action OnPlayerRunCmd(int client, int &buttons)
             
 		if(activeweapon <= 0)
 		{
-			return Plugin_Handled;
+			return Plugin_Continue;
 		}
             
 		char classname[32];
@@ -47,7 +47,7 @@ public Action OnPlayerRunCmd(int client, int &buttons)
 			
 			SDKHooks_DropWeapon(client, activeweapon, aux, NULL_VECTOR, true);
 
-			return Plugin_Handled;
+			return Plugin_Continue;
 		}
 	}
     
